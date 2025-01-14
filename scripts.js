@@ -19,9 +19,7 @@ amount.addEventListener("input", () => {
 
     const hasCaractereRegex = /\D+/g
 
-
     // console.log(amount.value)
-
 
     // Tirando os caracteres do campo de valor do input com replace
     amount.value = amount.value.replace(hasCaractereRegex, "")
@@ -56,6 +54,11 @@ form.onsubmit = (event) => {
 function convertCurrency(amount, price, symbol) {
 
     try {
+
+        // Aplica a classe que exibe o footer para mostrar o resultado
+        footer.classList.add("show-result")
+
+        
         // Manipulando o conteúdo do span "description" no foote do html
         description.textContent = `${symbol} 1 = ${formatCurrencyBRL(price)}`
 
@@ -68,8 +71,7 @@ function convertCurrency(amount, price, symbol) {
         // Exibe o resultado total
         result.textContent = `${total} Reais` 
 
-        // Aplica a classe que exibe o footer para mostrar o resultado
-        footer.classList.add("show-result")
+        
 
     } catch (error) {
 
